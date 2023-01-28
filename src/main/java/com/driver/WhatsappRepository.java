@@ -23,19 +23,18 @@ public class WhatsappRepository {
         this.senderMap = new HashMap<Message, User>();
         this.adminMap = new HashMap<Group, User>();
         this.userMobile = new HashSet<>();
-        this.customGroupCount = 0;
+        this.customGroupCount = 1;
         this.messageId = 0;
     }
 
     public String  createUser(String name , String mobile) throws Exception{
 
-        if( userMobile.contains(mobile)){
-            throw new Exception();
-        }else{
+        if(userMobile.contains(mobile)){
+            throw new Exception("User already exist");
+        }
             User u = new User(name, mobile);
             userMobile.add(mobile);
             return "SUCCESS";
-        }
     }
     public Group createGroup(List<User> users){
         Group g = new Group();
