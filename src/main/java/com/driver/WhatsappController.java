@@ -79,7 +79,7 @@ public class WhatsappController {
         //If user is not the admin, remove the user from the group, remove all its messages from all the databases, and update relevant attributes accordingly.
         //If user is removed successfully, return (the updated number of users in the group + the updated number of messages in group + the updated number of overall messages)
 
-        return whatsappService.removeUser(user);
+        return 0;
     }
 
     @GetMapping("/find-messages")
@@ -88,6 +88,6 @@ public class WhatsappController {
         // Find the Kth latest message between start and end (excluding start and end)
         // If the number of messages between given time is less than K, throw "K is greater than the number of messages" exception
 
-        return whatsappService.findMessage(start, end, K);
+        return null;
     }
 }
